@@ -1,11 +1,15 @@
 from telegram.ext import CommandHandler,Updater,MessageHandler,Filters
 import logging
-def main():
+import os
+
+ENV_TOKEN = os.environ.get('Bitnation_Telegram_Bot_Key')
+
+def main(ENV_TOKEN):
   
   logging.basicConfig(level=logging.DEBUG,
                       format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
   
-  updater    = Updater(token='543994048:AAGXareqjQmxakwfdYxdzTEEw045tWk5JIw')
+  updater    = Updater(token=ENV_TOKEN)
   dispatcher = updater.dispatcher
   
   def start(bot, update):
@@ -32,4 +36,4 @@ def main():
   # Deployment
   # setup 2 AWS EC2 with load balancers
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": main(ENV_TOKEN)
