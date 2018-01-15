@@ -22,7 +22,7 @@ def main(ENV_TOKEN):
     user = update.effective_user
   
     for user in msg.new_chat_members:
-      bot.send_message(chat.id, 'Welcome {} to the Bitnation chat, tell us a bit about yourself. Please also see pinned message for current info and updates.'.format(
+      bot.send_message(chat.id, 'Welcome {} to the Bitnation chat, tell us a bit about yourself. Please see the pinned message at the top for current info and updates.'.format(
         user.mention_html() ), parse_mode='HTML')
   
   # start_handler = CommandHandler('start', start)
