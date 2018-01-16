@@ -35,7 +35,7 @@ def main(ENV_TOKEN):
   dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, welcome))
   
   
-  updater.start_polling()
+  updater.start_polling(timeout=400)
   
   # Deployment
   # setup 2 AWS EC2 with load balancers
